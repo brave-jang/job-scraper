@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+    Reddit Reader
+  </title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+
+<body>
+  <header>
+    <h1>Remote Jobs</h1>
+    <h4>{{posts|count}} {{info}} jobs found.</h4>
+    <a href="/export?word={{info}}">Export to CSV</a>
+    <h5><a href="/">←Go back</a></h5>
+  </header>
+  <main>
+    {% for post in posts %}
+      <div>
+          <h2>{{post.title}}</h2>
+          <h3>{{post.name}}</h3>
+          <a href="{{post.url}}" target="_blank">Apply</a>
+        <hr />
+      </div>
+    {% endfor %}
+  </main>
+</body>
+
+</html>
